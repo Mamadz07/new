@@ -1,0 +1,346 @@
+/* Styling untuk header */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    color: white;
+    background: rgba(0, 0, 0, 0); /* Transparan sepenuhnya */
+}
+/* Kontainer utama header */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo dan nama */
+.header-kanan {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-kanan img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    max-width: 100%;
+}
+
+.header-kanan h3 {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Menu header (sejajar horizontal) */
+.header-kiri {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-direction: row; /* Pastikan tetap horizontal */
+}
+
+/* Menu teks */
+.header-menu-text {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+    display: flex; /* Agar tetap sejajar */
+    align-items: center;
+    margin: 0;
+}
+
+/* Efek hover */
+.header-menu-text:hover {
+    color: #ffcc00;
+}
+
+/* Animasi underline */
+.header-menu-text::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background: #ffcc00;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.header-menu-text:hover::after {
+    width: 100%;
+}
+
+/* Responsive untuk layar kecil */
+@media (max-width: 768px) {
+    .header-container {
+        padding: 10px 20px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Menu tetap sejajar horizontal */
+    .header-kiri {
+        display: flex;
+        flex-wrap: wrap; /* Agar tetap horizontal dan bisa turun jika tidak muat */
+        justify-content: center;
+        gap: 15px;
+    }
+}
+.slideshow-container {
+    width: 100%;
+    height: 40vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ditaruh di belakang header */
+}
+
+/* Styling gambar slideshow */
+.slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    object-fit: cover;
+}
+
+/* Efek fade */
+.fade {
+    animation: fadeEffect 1s ease-in-out;
+}
+/* Footer Styling */
+.footer {
+    background: #003366;
+    color: white;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+    margin-top: 100px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: auto;
+    
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.footer-section p, 
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.footer-section a:hover {
+    color: #ffcc00;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #ffcc00;
+}
+
+.map-container {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Copyright Section */
+.footer-bottom {
+    text-align: center;
+    background: #002244;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.header-container.scrolled {
+    background: #003366; /* Warna biru saat di-scroll */
+}
+.content-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 50px auto; /* Jarak dari atas */
+    padding: 250px 20px 20px;
+}
+
+.content-image img {
+    width: 450px; /* Ukuran gambar */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.content-text {
+    max-width: 500px;
+}
+
+.content-text h2 {
+    font-size: 28px;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.content-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: #ffcc00;
+    color: #003366;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ff9900;
+    color: white;
+}
+
+/* Responsive untuk layar kecil */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content-image img {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+.content-two {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.content-box {
+    background: white;
+    text-align: center;
+    width: 30%;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.content-box img {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.content-box h3 {
+    font-size: 20px;
+    color: #003366;
+    margin: 10px 0;
+}
+
+.content-box p {
+    font-size: 16px;
+    color: #555;
+}
+
+.content-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Responsive untuk layar kecil */
+@media (max-width: 768px) {
+    .content-two {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content-box {
+        width: 80%;
+    }
+}
